@@ -11,8 +11,7 @@ Read the index and output each SNP site information in each read.
 '''
 
 
-__import__(#package used to read sam file#)
-__import__(#package used to read fastq file#)
+
 
 #====read in files====
 def readinfile(Ref,Sam,IndexFile) :
@@ -26,11 +25,11 @@ def readinfile(Ref,Sam,IndexFile) :
 #====Class for SNP info====
 
 class SNP:
-    def __init__(self, s=0, type="snp", gt='', pt='', n_pt=2) :
+    def __init__(self, s=0, type="snp", gt=None, pt=None, n_pt=2) :
         self.s = self.strip().split('\t')[0]
         self.gt = self.strip().split('\t')[1]
         if len(self.gt) > 1: self.type = "indel"
-        self.pt = self.strip().split('\t')[2]
+        self.pt = self.strip().split('\t')[2].split(",")
         self.n_pt = len(self.pt.split(","))
 
 
