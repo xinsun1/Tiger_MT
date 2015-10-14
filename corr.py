@@ -27,10 +27,10 @@ def read_snp(SNP_FILE) :
         if len(SNP_L) == 1 :  ##need to be debug
             break
 
-        SNP_STORE[SNP(SNP_FH).s] = SNP(SNP_FH)    ## the pos of SNP should be
+        SNP_STORE[SNP(SNP_L).s] = SNP(SNP_L)    ## the pos of SNP should be
                                                   ## unique
 
-        SNP_ORDER.append(SNP(SNP_FH).s)
+        SNP_ORDER.append(SNP(SNP_L).s)
 
     if SNP_FH :
         SNP_FH.close()
