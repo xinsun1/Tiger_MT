@@ -67,7 +67,7 @@ def cor_snp(pos_A,pos_B) :
     pt_B.append(SNP_STORE[pos_B].gt)
     for i in pt_A :
         for j in pt_B :
-            re_snp[i + "/" + j] = 0
+            re_snp[i + "/" + j] = 0.0
 
 
 
@@ -82,7 +82,7 @@ def cor_snp(pos_A,pos_B) :
 
 
     ## take the shared reads
-    L_Share = []
+    L_Share = 0
 
     for i in L_A :
         for j in L_B :
@@ -94,6 +94,7 @@ def cor_snp(pos_A,pos_B) :
                 #     re_snp[base_A + "/" + base_B] += 1
                 #     break
                 #
+                L_Share += 1
                 if SNP_STORE[pos_A].type == "indel" :
                     if i.indel != 0 :
                         base_A = SNP_STORE[pos_A].pt[0]
@@ -110,11 +111,14 @@ def cor_snp(pos_A,pos_B) :
                 else :
                     base_B = j.alignment.query_sequence[j.query_position]
 
-                re_snp[base_A + "/" + base_B] += 1
+                if base_A + "/" + base_B in re_snp.keys() :
+                    re_snp[base_A + "/" + base_B] += 1
+                else :
+                    re_snp[base_A + "/" + base_B] = 1
                 break
 
 
-    if len(L_Share) <= 10 :
+    if L_Share <= 10 :
         ## consider pair end information
         for i in L_A :
             i_mate = MP_FH.mate(i.alignment)
@@ -125,6 +129,7 @@ def cor_snp(pos_A,pos_B) :
                     # base_B = j.alignment.query_sequence[j.query_position]
                     # re_snp[base_A + "/" + base_B] += 1
                     # break
+                    L_Share += 1
 
                     if SNP_STORE[pos_A].type == "indel" :
                         if i.indel != 0 :
@@ -142,15 +147,18 @@ def cor_snp(pos_A,pos_B) :
                     else :
                         base_B = j.alignment.query_sequence[j.query_position]
 
-                    re_snp[base_A + "/" + base_B] += 1
+                    if base_A + "/" + base_B in re_snp.keys() :
+                        re_snp[base_A + "/" + base_B] += 1
+                    else :
+                        re_snp[base_A + "/" + base_B] = 1
                     break
 
-    if len(L_Share) < 1 :
+    if L_Share < 1 :
         print "Warning : No read across :", pos_A, "and ",pos_B
         return [re_snp,0]
     else :
         ## calculate correlation between posA & B
-        re_sum = 0
+        re_sum = 0.0
         for i in re_snp.keys() :
             re_sum += re_snp[i]
 
