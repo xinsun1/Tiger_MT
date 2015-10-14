@@ -24,7 +24,7 @@ class SNP (str):
         self.gt = self.strip().split('\t')[1]
         if len(self.gt) > 1: self.type = "indel"
         self.pt = self.strip().split('\t')[2].split(",")
-        self.n_pt = len(self.pt.split(","))
+        self.n_pt = len(self.pt)
 
 
 
