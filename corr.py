@@ -127,7 +127,11 @@ def cor_snp(pos_A,pos_B) :
     if L_Share <= 10 :
         ## consider pair end information
         for i in L_A :
-            i_mate = MP_FH.mate(i.alignment)
+            if i.alignment.mate_is_unmapped :
+                continue
+            else :
+                i_mate = MP_FH.mate(i.alignment)
+                
             for j in L_B :
                 if i_mate == j.alignment :
                     ## record base information
