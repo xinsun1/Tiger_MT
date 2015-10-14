@@ -28,7 +28,7 @@ def main() :
 
     OUTPUT_FH = open(OUTPUT_FILE,'w')
     for i in range(0,len(SNP_ORDER) - 1 ) :
-        [corr_o_hash,corr_o_sum] = cor_snp(SNP_ORDER[i],SNP_ORDER[i + 1])[0]
+        [corr_o_hash,corr_o_sum] = cor_snp(SNP_ORDER[i],SNP_ORDER[i + 1])
 
 
 
