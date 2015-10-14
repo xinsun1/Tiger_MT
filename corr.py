@@ -24,7 +24,7 @@ def read_snp(SNP_FILE) :
     while 1:
         SNP_L = SNP_FH.readline()
 
-        if len(SNP_L) == 1 :  ##need to be debug
+        if len(SNP_L) == 0 :  ##need to be debug
             break
 
         SNP_STORE[SNP(SNP_L).s] = SNP(SNP_L)    ## the pos of SNP should be
