@@ -101,7 +101,10 @@ def cor_snp(pos_A,pos_B) :
                     else :
                         base_A = SNP_STORE[pos_A].gt
                 else :
-                    base_A = i.alignment.query_sequence[i.query_position]
+                    if i.query_position == None :
+                        base_A = "-"
+                    else :
+                        base_A = i.alignment.query_sequence[i.query_position]
 
                 if SNP_STORE[pos_B].type == "indel" :
                     if i.indel != 0 :
@@ -109,7 +112,10 @@ def cor_snp(pos_A,pos_B) :
                     else :
                         base_B = SNP_STORE[pos_B].gt
                 else :
-                    base_B = j.alignment.query_sequence[j.query_position]
+                    if j.query_position == None :
+                        base_B = "-"
+                    else :
+                        base_B = j.alignment.query_sequence[j.query_position]
 
                 if base_A + "/" + base_B in re_snp.keys() :
                     re_snp[base_A + "/" + base_B] += 1
@@ -137,7 +143,10 @@ def cor_snp(pos_A,pos_B) :
                         else :
                             base_A = SNP_STORE[pos_A].gt
                     else :
-                        base_A = i.alignment.query_sequence[i.query_position]
+                        if i.query_position == None :
+                            base_A = "-"
+                        else :
+                            base_A = i.alignment.query_sequence[i.query_position]
 
                     if SNP_STORE[pos_B].type == "indel" :
                         if i.indel != 0 :
@@ -145,7 +154,10 @@ def cor_snp(pos_A,pos_B) :
                         else :
                             base_B = SNP_STORE[pos_B].gt
                     else :
-                        base_B = j.alignment.query_sequence[j.query_position]
+                        if j.query_position == None :
+                            base_B = "-"
+                        else :
+                            base_B = j.alignment.query_sequence[j.query_position]
 
                     if base_A + "/" + base_B in re_snp.keys() :
                         re_snp[base_A + "/" + base_B] += 1

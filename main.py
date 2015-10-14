@@ -35,7 +35,7 @@ def main() :
         corr_o_line = ""
 
         for i in corr_o_hash.keys() :
-            if corr_o_hash[i] != 0 :
+            if corr_o_hash[i] >= 0.1 :
                 corr_o_line = corr_o_line + i + '\t' + str(corr_o_hash[i]) + '\t'
 
         corr_o_line += str(corr_o_sum)
