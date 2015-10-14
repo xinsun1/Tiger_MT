@@ -61,8 +61,12 @@ def read_mp (MAP_FILE) :
 def cor_snp(pos_A,pos_B) :
     re_snp = {}
     ## initialize for two SNP
-    for i in (SNP_STORE[pos_A].gt + SNP_STORE[pos_A].pt) :
-        for j in (SNP_STORE[pos_B].gt + SNP_STORE[pos_B].pt) :
+    pt_A = SNP_STORE[pos_A].pt
+    pt_A.append(SNP_STORE[pos_A].gt)
+    pt_B = SNP_STORE[pos_B].pt
+    pt_B.append(SNP_STORE[pos_B].gt)
+    for i in pt_A :
+        for j in pt_B :
             re_snp[i + "/" + j] = 0
 
 
