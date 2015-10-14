@@ -9,6 +9,9 @@ import sys
 def main() :
     print "take in by order : SNP_file(.txt), BAM_file(indexed), output name"
 
+    if len(sys.argv) == 1 :
+        exit(0)
+
     SNP_FILE = sys.argv[1]
     BAM_FILE = sys.argv[2]
     OUTPUT_FILE = sys.argv[3]
