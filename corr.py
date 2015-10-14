@@ -35,6 +35,9 @@ def read_snp(SNP_FILE) :
     if SNP_FH :
         SNP_FH.close()
 
+    return [SNP_STORE, SNP_ORDER]
+
+
 
 
 
@@ -48,6 +51,7 @@ import pysam as ps
 def read_mp (MAP_FILE) :
     global MP_FH
     MP_FH = ps.AlignmentFile(MAP_FILE,"rb")
+    return MP_FH
 
 
 
