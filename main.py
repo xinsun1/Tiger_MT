@@ -25,14 +25,14 @@ def main() :
 
     MP_FH = read_mp(BAM_FILE)
 
-
     OUTPUT_FH = open(OUTPUT_FILE,'w')
+
     for i in range(0,len(SNP_ORDER) - 1 ) :
         [corr_o_hash,corr_o_sum] = cor_snp(SNP_ORDER[i],SNP_ORDER[i + 1])
 
 
 
-        corr_o_line = ""
+        corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
         for i in corr_o_hash.keys() :
             if corr_o_hash[i] >= 0.1 :
@@ -44,6 +44,8 @@ def main() :
 
     if OUTPUT_FH :
         OUTPUT_FH.close()
+
+
 
 
 

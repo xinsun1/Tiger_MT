@@ -19,7 +19,7 @@ def main () :
 
 class SNP (str):
     def __init__(self, s=0, type=None, gt=None, pt=None, n_pt=2) :
-        super(SNP,self).__init__()
+        super(SNP, self).__init__()
         self.s = self.strip().split('\t')[0]
         self.gt = self.strip().split('\t')[1]
         if len(self.gt) > 1:
@@ -28,6 +28,29 @@ class SNP (str):
             self.type = "snp"
         self.pt = self.strip().split('\t')[2].split(",")
         self.n_pt = len(self.pt)
+
+
+
+#==== Class for cor info ====
+class COR (str) :
+    def __init__(self, pos=None, n_cor = None, n_read = None, cor = None) :
+        super(COR, self).__init__()
+        a = self.strip().split('\t')
+        self.pos = a[0]
+        self.n_read = int(a[-1])
+        self.n_cor = len(a[1:-1]) / 2
+        self.cor = {}
+        for i in range(0, self.n_cor -1) :
+            self.cor[a[2*i + 1]] = a[2*i + 2]
+
+
+
+
+
+
+
+
+
 
 
 

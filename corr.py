@@ -82,7 +82,7 @@ def cor_snp(pos_A,pos_B) :
 
 
     ## take the shared reads
-    L_Share = 0
+    L_Share = 0  ## count reads that share by two position
 
     for i in L_A :
         for j in L_B :
@@ -101,7 +101,7 @@ def cor_snp(pos_A,pos_B) :
                     else :
                         base_A = SNP_STORE[pos_A].gt
                 else :
-                    if i.query_position == None :
+                    if i.query_position == None :  ## if gap exist
                         base_A = "-"
                     else :
                         base_A = i.alignment.query_sequence[i.query_position]
@@ -127,18 +127,15 @@ def cor_snp(pos_A,pos_B) :
     if L_Share <= 10 :
         ## consider pair end information
         for i in L_A :
-            if i.alignment.mate_is_unmapped :
+            if i.alignment.mate_is_unmapped : ## if no mate
                 continue
             else :
                 i_mate = MP_FH.mate(i.alignment)
-                
+
             for j in L_B :
                 if i_mate == j.alignment :
                     ## record base information
-                    # base_A = i.alignment.query_sequence[i.query_position]
-                    # base_B = j.alignment.query_sequence[j.query_position]
-                    # re_snp[base_A + "/" + base_B] += 1
-                    # break
+
                     L_Share += 1
 
                     if SNP_STORE[pos_A].type == "indel" :
