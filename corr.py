@@ -70,7 +70,8 @@ def cor_snp(pos_A,pos_B) :
             re_snp[i + "/" + j] = 0
 
 
-    pu = MP_FH.pileup(MP_FH.references, int(pos_A) - 1, int(pos_B)) ## the Ref is 0 based
+
+    pu = MP_FH.pileup(MP_FH.references[0], int(pos_A) - 1, int(pos_B)) ## the Ref is 0 based
 
     ## get reads mapped to posA,B
     for i in pu :
