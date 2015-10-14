@@ -20,6 +20,7 @@ def main () :
 class SNP (str):
     def __init__(self, s=0, type="snp", gt=None, pt=None, n_pt=2) :
         super(SNP,self).__init__()
+        print self.strip().split('\t')
         self.s = self.strip().split('\t')[0]
         self.gt = self.strip().split('\t')[1]
         if len(self.gt) > 1: self.type = "indel"
