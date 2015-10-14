@@ -4,6 +4,8 @@ __author__ = 'sunxin'
 from corr import *
 import sys
 
+
+
 #==== main ====
 
 def main() :
@@ -20,13 +22,12 @@ def main() :
 
     read_mp(BAM_FILE)
 
-    global SNP_ORDER
 
     OUTPUT_FH = open(OUTPUT_FILE,'w')
-    for i in range(0,len(SNP_ORDER) - 1 ) :
-        corr_o_hash = cor_snp(SNP_ORDER[i],SNP_ORDER[i + 1])[0]
+    for i in range(0,len(corr.SNP_ORDER) - 1 ) :
+        corr_o_hash = cor_snp(corr.SNP_ORDER[i],corr.SNP_ORDER[i + 1])[0]
 
-        corr_o_sum = cor_snp(SNP_ORDER[i],SNP_ORDER[i + 1])[1]
+        corr_o_sum = cor_snp(corr.SNP_ORDER[i],corr.SNP_ORDER[i + 1])[1]
 
         corr_o_line = ""
 
