@@ -38,7 +38,7 @@ def main() :
             if corr_o_hash[i] != 0 :
                 corr_o_line = corr_o_line + i + '\t' + str(corr_o_hash[i]) + '\t'
 
-        corr_o_line += corr_o_sum
+        corr_o_line += str(corr_o_sum)
 
         print >> OUTPUT_FH, corr_o_line
 
