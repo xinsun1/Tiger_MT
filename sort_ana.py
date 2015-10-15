@@ -54,6 +54,9 @@ def main () :
     while 1 :
         MOD_L = MOD_FH.readline()
 
+        if len(MOD_L) == 0 :
+            break
+
         mod_cor = COR(MOD_L)
         if mod_cor.n_cor == 2 :
             base_11 = mod_cor.cor.keys()[0].split("/")[0]
