@@ -130,7 +130,10 @@ def cor_snp(pos_A,pos_B) :
             if i.alignment.mate_is_unmapped or (i.alignment.is_proper_pair == False): ## if no mate
                 continue
             else :
-                i_mate = MP_FH.mate(i.alignment)
+                try :
+                    i_mate = MP_FH.mate(i.alignment)
+                except ValueError :
+                    continue
 
             for j in L_B :
                 if i_mate == j.alignment :
