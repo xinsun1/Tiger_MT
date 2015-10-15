@@ -79,7 +79,7 @@ def main() :
 
                     if pos_b != -10 :
                         ## output cor relation between two position
-                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
+                        [corr_o_hash,corr_o_sum] = cor_snp(str(pos_b), str(int(float(cor_i.pos.split(":")[0]))))
                         corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                         for i in corr_o_hash.keys() :
@@ -101,7 +101,7 @@ def main() :
 
                     if pos_b != -10 :
                         ## output cor relation between two position
-                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
+                        [corr_o_hash,corr_o_sum] = cor_snp(str(pos_b), str(int(float(cor_i.pos.split(":")[0]))))
                         corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                         for i in corr_o_hash.keys() :
@@ -122,7 +122,7 @@ def main() :
 
                     if pos_b != -10 :
                         ## output cor relation between two position
-                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
+                        [corr_o_hash,corr_o_sum] = cor_snp(str(pos_b), str(int(float(cor_i.pos.split(":")[0]))))
                         corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                         for i in corr_o_hash.keys() :
@@ -163,7 +163,7 @@ def main() :
 
                         if pos_b != -10 :
                             ## output cor relation between two position
-                            [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
+                            [corr_o_hash,corr_o_sum] = cor_snp(str(pos_b), str(int(float(cor_i.pos.split(":")[0]))))
                             corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                             for i in corr_o_hash.keys() :
@@ -184,7 +184,7 @@ def main() :
 
                         if pos_b != -10 :
                             ## output cor relation between two position
-                            [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
+                            [corr_o_hash,corr_o_sum] = cor_snp(str(pos_b), str(int(float(cor_i.pos.split(":")[0]))))
                             corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                             for i in corr_o_hash.keys() :
