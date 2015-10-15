@@ -98,7 +98,7 @@ def main () :
 
     #==== output new ANA ====
     for i in range(0, len(ANA_ORDER)) :
-        if ANA_F[i] == 1 :
+        if ANA_F[ANA_ORDER[i]] == 1 :
             if ANA_STORE[i][0] == "?" :
                 print >> ANA_NEW_FH, i + '\t' + ANA_STORE[i][0]
             else :
