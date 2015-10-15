@@ -39,6 +39,9 @@ def read_ana (ANA_FILE) :
 def main () :
     print "take in MOD_FILE, ANA_FILE"
 
+    if len(sys.argv) == 1 :
+        exit(0)
+
     MOD_FILE = sys.argv[1]
     ANA_FILE = sys.argv[2]
 
