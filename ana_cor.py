@@ -36,7 +36,7 @@ def read_cor (COR_FILE) :
 
 def main() :
 
-    print "take in "
+    print "take in COR_FILE, BAM_FILE, OUTPUT_FILE"
 
     if len(sys.argv) == 1 :
         exit(0)
@@ -221,6 +221,20 @@ def main() :
                 pos_b = cor_i.pos.split(":")[0] - 1
 
 
+    for i in range(0,len(COR_ORDER)) :
+        SNP_key = COR_ORDER[i].pos.split(":")[0]
+
+        SNP_list = SNP_OUT[SNP_key]
+        SNP_o_line = SNP_key
+        for j in range(0,len(SNP_list)) :
+            SNP_o_line += ('\t' + SNP_list[j])
+
+        print >> OUTPUT_FH, SNP_o_line
+
+
+if __name__ == '__main__' :
+    main()
+    
 
 
 
