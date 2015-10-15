@@ -37,7 +37,7 @@ class COR (str) :
         super(COR, self).__init__()
         a = self.strip().split('\t')
         self.pos = a[0]
-        self.n_read = int(a[-1])
+        self.n_read = int(float(a[-1]))
         self.n_cor = len(a[1:-1]) / 2
         self.cor = {}
         for i in range(0, self.n_cor -1) :
