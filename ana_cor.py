@@ -32,7 +32,7 @@ def read_cor (COR_FILE) :
     if COR_FH :
         COR_FH.close()
 
-    return (COR_STORE, COR_ORDER)
+    return [COR_STORE, COR_ORDER]
 
 def main() :
 
@@ -210,7 +210,7 @@ def main() :
         elif cor_i.n_cor == 1:
             base_11 = cor_i.cor.keys()[0].split("/")[0]
             base_12 = cor_i.cor.keys()[0].split("/")[1]
-            SNP_OUT[cor_i.pos.split(":")[0]] = [base_b1,base_b2]
+            SNP_OUT[cor_i.pos.split(":")[0]] = [base_11,base_11]
             base_b1 = base_12
             base_b2 = base_12
 
