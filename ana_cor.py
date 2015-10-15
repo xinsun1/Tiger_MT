@@ -88,8 +88,8 @@ def main() :
                         pos_b = 0
 
 
-            elif base_11 != base_21 && base_12 != base_22 :
-                if base_b1 == base_11 && base_b2 == base_21 :
+            elif base_11 != base_21 and base_12 != base_22 :
+                if base_b1 == base_11 and base_b2 == base_21 :
                     SNP_OUT[cor_i.pos.split(":")[0]] = [base_b1, base_b2]
                     base_b1 = base_12
                     base_b2 = base_22
@@ -110,7 +110,7 @@ def main() :
                         pos_b = 0
 
 
-                elif base_b1 == base_21 && base_b2 == base_11 :
+                elif base_b1 == base_21 and base_b2 == base_11 :
                     SNP_OUT[cor_i.pos.split(":")[0]] = [base_b1, base_b2]
                     base_b1 = base_22
                     base_b2 = base_12
@@ -151,7 +151,7 @@ def main() :
 
 
             else :
-                if base_b1 == base_11 && base_b2 == base_21 :
+                if base_b1 == base_11 and base_b2 == base_21 :
                         SNP_OUT[cor_i.pos.split(":")[0]] = [base_b1, base_b2]
                         base_b1 = base_12
                         base_b2 = base_22
@@ -172,7 +172,7 @@ def main() :
                             pos_b = 0
 
 
-                elif base_b1 == base_21 && base_b2 == base_11 :
+                elif base_b1 == base_21 and base_b2 == base_11 :
                         SNP_OUT[cor_i.pos.split(":")[0]] = [base_b1, base_b2]
                         base_b1 = base_22
                         base_b2 = base_12
@@ -234,7 +234,7 @@ def main() :
 
 if __name__ == '__main__' :
     main()
-    
+
 
 
 
