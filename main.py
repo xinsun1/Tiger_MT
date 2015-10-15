@@ -32,7 +32,7 @@ def main() :
 
 
 
-        corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
+        corr_o_line = str(SNP_ORDER[i]) + ":" + str(SNP_ORDER[i + 1]) + '\t'
 
         for i in corr_o_hash.keys() :
             if corr_o_hash[i] >= 0.1 :
