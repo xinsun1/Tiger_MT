@@ -227,7 +227,7 @@ def main() :
 
 
     for i in range(0,len(COR_ORDER)) :
-        SNP_key = COR_ORDER[i].pos.split(":")[0]
+        SNP_key = COR_ORDER[i].split(":")[0]
 
         SNP_list = SNP_OUT[SNP_key]
         SNP_o_line = SNP_key
