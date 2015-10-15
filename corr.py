@@ -127,7 +127,7 @@ def cor_snp(pos_A,pos_B) :
     if L_Share <= 10 :
         ## consider pair end information
         for i in L_A :
-            if i.alignment.mate_is_unmapped : ## if no mate
+            if i.alignment.mate_is_unmapped or (i.alignment.is_proper_pair == False): ## if no mate
                 continue
             else :
                 i_mate = MP_FH.mate(i.alignment)
