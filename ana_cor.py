@@ -36,17 +36,22 @@ def read_cor (COR_FILE) :
 
 def main() :
 
-    print "take in COR_FILE, BAM_FILE, OUTPUT_FILE"
+    print "take in COR_FILE, BAM_FILE, SNP_FILE, OUTPUT_FILE"
 
     if len(sys.argv) == 1 :
         exit(0)
 
     COR_FILE = sys.argv[1]
     BAM_FILE = sys.argv[2]
-    OUTPUT_FILE = sys.argv[3]
+    SNP_FILE = sys.argv[3]
+    OUTPUT_FILE = sys.argv[4]
 
     global COR_STORE, COR_ORDER, MP_FH
     [COR_STORE, COR_ORDER] = read_cor(COR_FILE)
+
+    global SNP_STORE, SNP_ORDER
+
+    [SNP_STORE,SNP_ORDER] = read_snp(SNP_FILE)
 
 
     MP_FH = read_mp(BAM_FILE)
