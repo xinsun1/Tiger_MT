@@ -40,7 +40,7 @@ class COR (str) :
         self.n_read = int(float(a[-1]))
         self.n_cor = len(a[1:-1]) / 2
         self.cor = {}
-        for i in range(0, self.n_cor -1) :
+        for i in range(0, self.n_cor) :
             self.cor[a[2*i + 1]] = a[2*i + 2]
 
 
