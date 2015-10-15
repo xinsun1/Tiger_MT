@@ -57,7 +57,7 @@ def main() :
 
     base_b1 = ""
     base_b2 = ""
-    pos_b = 0
+    pos_b = -10
     for i in range(0,len(COR_ORDER)) :
         cor_i = COR_STORE[COR_ORDER[i]]
 
@@ -72,9 +72,9 @@ def main() :
                     base_b1 = base_12
                     base_b2 = base_22
 
-                    if pos_b != 0 :
+                    if pos_b != -10 :
                         ## output cor relation between two position
-                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, cor_i.pos.split(":")[0])
+                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
                         corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                         for i in corr_o_hash.keys() :
@@ -85,7 +85,7 @@ def main() :
 
                         print >> MCOR_FH, corr_o_line
 
-                        pos_b = 0
+                        pos_b = -10
 
 
             elif base_11 != base_21 and base_12 != base_22 :
@@ -94,9 +94,9 @@ def main() :
                     base_b1 = base_12
                     base_b2 = base_22
 
-                    if pos_b != 0 :
+                    if pos_b != -10 :
                         ## output cor relation between two position
-                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, cor_i.pos.split(":")[0])
+                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
                         corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                         for i in corr_o_hash.keys() :
@@ -107,7 +107,7 @@ def main() :
 
                         print >> MCOR_FH, corr_o_line
 
-                        pos_b = 0
+                        pos_b = -10
 
 
                 elif base_b1 == base_21 and base_b2 == base_11 :
@@ -115,9 +115,9 @@ def main() :
                     base_b1 = base_22
                     base_b2 = base_12
 
-                    if pos_b != 0 :
+                    if pos_b != -10 :
                         ## output cor relation between two position
-                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, cor_i.pos.split(":")[0])
+                        [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
                         corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                         for i in corr_o_hash.keys() :
@@ -128,15 +128,15 @@ def main() :
 
                         print >> MCOR_FH, corr_o_line
 
-                        pos_b = 0
+                        pos_b = -10
 
                 else :
                     SNP_OUT[cor_i.pos.split(":")[0]] = ["?"]
                     base_b1 = base_12
                     base_b2 = base_22
                     ## mark for break in sequence
-                    if pos_b == 0 :
-                        pos_b = cor_i.pos.split(":")[0] - 1
+                    if pos_b == -10 :
+                        pos_b = int(float(cor_i.pos.split(":")[0])) - 1
 
 
 
@@ -146,8 +146,8 @@ def main() :
                 base_b1 = base_12
                 base_b2 = base_22
 
-                if pos_b == 0 :
-                    pos_b = cor_i.pos.split(":")[0] - 1
+                if pos_b == -10 :
+                    pos_b = int(float(cor_i.pos.split(":")[0])) - 1
 
 
             else :
@@ -156,9 +156,9 @@ def main() :
                         base_b1 = base_12
                         base_b2 = base_22
 
-                        if pos_b != 0 :
+                        if pos_b != -10 :
                             ## output cor relation between two position
-                            [corr_o_hash,corr_o_sum] = cor_snp(pos_b, cor_i.pos.split(":")[0])
+                            [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
                             corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                             for i in corr_o_hash.keys() :
@@ -169,7 +169,7 @@ def main() :
 
                             print >> MCOR_FH, corr_o_line
 
-                            pos_b = 0
+                            pos_b = -10
 
 
                 elif base_b1 == base_21 and base_b2 == base_11 :
@@ -177,9 +177,9 @@ def main() :
                         base_b1 = base_22
                         base_b2 = base_12
 
-                        if pos_b != 0 :
+                        if pos_b != -10 :
                             ## output cor relation between two position
-                            [corr_o_hash,corr_o_sum] = cor_snp(pos_b, cor_i.pos.split(":")[0])
+                            [corr_o_hash,corr_o_sum] = cor_snp(pos_b, int(float(cor_i.pos.split(":")[0])))
                             corr_o_line = str(i+1) + ":" + str(i+2) + '\t'
 
                             for i in corr_o_hash.keys() :
@@ -190,7 +190,7 @@ def main() :
 
                             print >> MCOR_FH, corr_o_line
 
-                            pos_b = 0
+                            pos_b = -10
 
 
 
@@ -199,8 +199,8 @@ def main() :
                     base_b1 = base_12
                     base_b2 = base_22
 
-                    if pos_b == 0 :
-                        pos_b = cor_i.pos.split(":")[0] - 1
+                    if pos_b == -10 :
+                        pos_b = int(float(cor_i.pos.split(":")[0])) - 1
 
         elif cor_i.n_cor == 1:
             base_11 = cor_i.cor.keys()[0].split("/")[0]
@@ -209,16 +209,16 @@ def main() :
             base_b1 = base_12
             base_b2 = base_12
 
-            if pos_b == 0 :
-                pos_b = cor_i.pos.split(":")[0] - 1
+            if pos_b == -10 :
+                pos_b = int(float(cor_i.pos.split(":")[0])) - 1
 
         else :
             ## cor_i.n_cor == 3 or else
             SNP_OUT[cor_i.pos.split(":")[0]] = ["?"]
             base_b1 = ""
             base_b2 = ""
-            if pos_b == 0 :
-                pos_b = cor_i.pos.split(":")[0] - 1
+            if pos_b == -10 :
+                pos_b = int(float(cor_i.pos.split(":")[0])) - 1
 
 
     for i in range(0,len(COR_ORDER)) :
