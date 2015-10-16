@@ -53,10 +53,10 @@ def main () :
 
     OUT_FH = open(OUT_FILE, 'w')
 
-    print >> OUT_FILE, ">consensus_1"
-    print >> OUT_FILE, con_1
-    print >> OUT_FILE, ">consensus_2"
-    print >> OUT_FILE, con_2
+    print >> OUT_FH, ">consensus_1"
+    print >> OUT_FH, con_1
+    print >> OUT_FH, ">consensus_2"
+    print >> OUT_FH, con_2
 
     if MOD2_FH :
         MOD2_FH.close()
