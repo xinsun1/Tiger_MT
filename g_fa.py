@@ -45,11 +45,11 @@ def main () :
 
         if len(mod_l[1]) != 1 or len(mod_l[2]) != 1 :
             len_gt = len(SNP_STORE[mod_l[0]].gt)
-            con_1 = con_1[ : (mod_l[0] - 1)] + mod_l[1] + con_1[(mod_l[0] + len_gt - 1) : ]
-            con_2 = con_2[ : (mod_l[0] - 1)] + mod_l[2] + con_2[(mod_l[0] + len_gt - 1) : ]
+            con_1 = con_1[ : (int(mod_l[0]) - 1)] + mod_l[1] + con_1[(int(mod_l[0]) + len_gt - 1) : ]
+            con_2 = con_2[ : (int(mod_l[0]) - 1)] + mod_l[2] + con_2[(int(mod_l[0]) + len_gt - 1) : ]
         else :
-            con_1 = con_1[ : (mod_l[0] - 1)] + mod_l[1] + con_1[mod_l[0] : ]
-            con_2 = con_2[ : (mod_l[0] - 1)] + mod_l[2] + con_2[mod_l[0] : ]
+            con_1 = con_1[ : (int(mod_l[0]) - 1)] + mod_l[1] + con_1[int(mod_l[0]) : ]
+            con_2 = con_2[ : (int(mod_l[0]) - 1)] + mod_l[2] + con_2[int(mod_l[0]) : ]
 
     OUT_FH = open(OUT_FILE, 'w')
 
