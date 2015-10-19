@@ -141,7 +141,10 @@ def main() :
                     base_b2 = base_22
                     ## mark for break in sequence
                     if pos_b == -10 :
-                        pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
+                        if i == 0 :
+                            pos_b = int(float(COR_STORE[COR_ORDER[i]].pos.split(":")[0]))
+                        else :
+                            pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
 
 
 
@@ -152,7 +155,10 @@ def main() :
                 base_b2 = base_22
 
                 if pos_b == -10 :
-                    pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
+                    if i == 0 :
+                        pos_b = int(float(COR_STORE[COR_ORDER[i]].pos.split(":")[0]))
+                    else :
+                        pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
 
 
             else :
@@ -205,7 +211,10 @@ def main() :
                     base_b2 = base_22
 
                     if pos_b == -10 :
-                        pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
+                        if i == 0 :
+                            pos_b = int(float(COR_STORE[COR_ORDER[i]].pos.split(":")[0]))
+                        else :
+                            pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
 
         elif cor_i.n_cor == 1:
             base_11 = cor_i.cor.keys()[0].split("/")[0]
@@ -215,7 +224,10 @@ def main() :
             base_b2 = base_12
 
             if pos_b == -10 :
-                pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
+                if i == 0 :
+                    pos_b = int(float(COR_STORE[COR_ORDER[i]].pos.split(":")[0]))
+                else :
+                    pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
 
         else :
             ## cor_i.n_cor == 3 or else
@@ -223,7 +235,10 @@ def main() :
             base_b1 = ""
             base_b2 = ""
             if pos_b == -10 :
-                pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
+                if i == 0 :
+                    pos_b = int(float(COR_STORE[COR_ORDER[i]].pos.split(":")[0]))
+                else :
+                    pos_b = int(float(COR_STORE[COR_ORDER[i - 1]].pos.split(":")[0]))
 
 
     for i in range(0,len(COR_ORDER)) :
